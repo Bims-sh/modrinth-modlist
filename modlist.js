@@ -21,6 +21,7 @@
     })
 
     const flattenedData = modData.flat();
+    flattenedData.sort((a, b) => a.title.localeCompare(b.title));
 
     const maxLinkLength = Math.max(...flattenedData.map(({ link, title }) => `[${title}](${link})`.length), 4);
     const maxVersionLength = Math.max(...flattenedData.map(({ version }) => version.length), 7);
